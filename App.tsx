@@ -1,15 +1,15 @@
 import { ThemeProvider } from 'styled-components/native';
-import { Groups } from './src/Screens/Groups';
-import Theme from '@theme/index';
 import { StatusBar } from 'react-native';
+
 import {
   useFonts,
   Roboto_400Regular,
   Roboto_700Bold
 } from '@expo-google-fonts/roboto';
+
+import Theme from '@theme/index';
 import { Loading } from 'src/Components/Loading';
-import { NewGroup } from 'src/Screens/NewGroup';
-import { Players } from 'src/Screens/Players';
+import { Routes } from 'src/routes/index';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold })
@@ -21,7 +21,7 @@ export default function App() {
         barStyle={'light-content'}
         translucent
       />
-      {fontsLoaded ? <Players /> : <Loading />}
+      {fontsLoaded ? <Routes /> : <Loading />}
     </ThemeProvider>
   );
 }
